@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 function TodoForm(props) {
     const [input, setInput] = useState('');
@@ -10,22 +10,23 @@ function TodoForm(props) {
     const handleSubmit = e => {
       e.preventDefault();
 
-      props.onSubmit ({
-      id: Math.floor(Math.random() * 10000),
-      text: input
-    });
+       props.onSubmit ({
+       id: Math.floor(Math.random() * 10000),
+       text: input
+     });
 
-      setInput('');
+    setInput('');
     };
 
   return (
-    <form className='todo-form'>
+    <form className='todo-form' onSubmit={handleSubmit}>
         <input
         type='text'
         placeholder=''
         value={input}
         name='text'
         className='todo-input'
+        onChange={handleChange}
         />
         <button className='todo-button'>Adicionar tarefa</button>
     </form>
