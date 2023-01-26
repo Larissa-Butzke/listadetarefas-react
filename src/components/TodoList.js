@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Todo from './Todo';
 import TodoForm from './TodoForm';
 
 function TodoList() {
@@ -15,10 +16,17 @@ function TodoList() {
     setTodos(newTodos);
   };
 
+  const completeTodo = id => {
+    let updatedTodosm
+
+
+  }
+
   return (
     <div>
         <h1>Lista de Tarefas</h1>
         <TodoForm onSubmit={addTodo}/>
+        <Todo todos={todos} completeTodo={completeTodo} />
     </div>
   );
 }
